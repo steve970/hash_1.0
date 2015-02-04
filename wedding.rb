@@ -42,22 +42,62 @@ def joes_last_name(people)
 end
 
 def last_names(people)
+  result = []
+  people.each do |person, person_data|
+    result << person_data[:last_name]
+  end
+  result
 end
 
 def first_fav_genre(people)
+  result = []
+  people.each do |person, person_data|
+    result << person_data[:preferences][:favorite_genres][0]
+  end
+  result
 end
 
 def joes_neighbor(people)
+  #result = []
+  #people.each do |key, value|
+  #  if value[:sitting_next_to] = ["sue"]
+  #    result << value[:last_name]
+  #  end
+  #end
+  #result[1]
+  results = people["joe"][:sitting_next_to].to_s
+  people[results][:last_name]
+
 end
 
 def sues_meal(people)
+  #result = []
+  #people.each do |person, person_data|
+  #  result << person_data[:preferences][:meal]
+  #end
+  #result[1]
+  results = people["sue"][:preferences][:meal]
 end
 
 def joes_first_letter_date(people)
+  #result = []
+  #people.each do |person, person_data|
+  #  result << person_data[:correspondence][0][:date]
+  #end
+  #result[0]
+  results = people["joe"][:correspondence][0][:date]
 end
 
+
 def sues_last_letter_desc(people)
+  #result = []
+  #people.each do |person, person_data|
+  #  result << person_data[:correspondence][1][:description]
+  #end
+  #result[1]
+  results = people["sue"][:correspondence][1][:description]
 end
+
 
 puts "*"*80
 puts "Make each method return the correct value"
